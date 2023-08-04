@@ -123,7 +123,7 @@ const experiences = [
 
 	{
 		title: "Full stack Developer",
-		company_name: "Free lancing",
+		company_name: "Free Lancing",
 		icon: meta,
 		iconBg: "#E6DEDD",
 		date: "August 2023 - Present",
@@ -156,7 +156,8 @@ const projects = [
 			},
 		],
 		image: carrent,
-		source_code_link: "https://github.com/sain-fullstack-developer",
+		source_code_link:
+			"https://github.com/sain-fullstack-developer/Managing-Tasks-App",
 	},
 ];
 
