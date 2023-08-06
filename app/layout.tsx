@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 		default: "Personal Portfolio",
 		template: "%s",
 	},
-	description: "Sainath studies computer science at University of Osmania",
+	description: "Sainath studied computer science at University of Osmania",
 	viewport: {
 		width: "device-width",
 		initialScale: 1,
@@ -23,6 +23,25 @@ export const metadata: Metadata = {
 		},
 	},
 	keywords: ["web dev", "web development", "personal portfolio"],
+	icons: [
+		{
+			rel: "icon",
+			type: "image/png",
+			sizes: "32x32",
+			url: "/favicon/favicon-32x32.png",
+		},
+		{
+			rel: "icon",
+			type: "image/png",
+			sizes: "16x16",
+			url: "/favicon/favicon-16x16.png",
+		},
+		{
+			rel: "apple-touch-icon",
+			sizes: "180x180",
+			url: "/favicon/apple-touch-icon.png",
+		},
+	],
 };
 export default function RootLayout({
 	children,

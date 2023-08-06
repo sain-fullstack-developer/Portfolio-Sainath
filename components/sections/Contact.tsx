@@ -26,7 +26,7 @@ export default function Contact() {
 						duration: 0.5,
 						delay: 0.4,
 					}}
-					className="h-[2px] mobile:w-[15%] tablet:w-[15%] laptop:w-[30%] desktop:w-[30%] inline-block bg-ab"></motion.div>
+					className="h-[2px] mobile:w-[15%] tablet:w-[15%] laptop:w-[30%] desktop:w-[30%] inline-block bg-white"></motion.div>
 				<motion.div
 					initial={{
 						opacity: 0,
@@ -64,7 +64,7 @@ export default function Contact() {
 						duration: 0.5,
 						delay: 0.4,
 					}}
-					className="h-[2px] mobile:w-[24%] tablet:w-[24%] laptop:w-[40%] desktop:w-[40%] inline-block bg-ab"></motion.div>
+					className="h-[2px] mobile:w-[24%] tablet:w-[24%] laptop:w-[40%] desktop:w-[40%] inline-block bg-white"></motion.div>
 			</div>
 			<div className="flex flex-col justify-center items-center mobile:mt-[2rem] tablet:mt-[2rem] laptop:mt-[5rem] desktop:mt-[5rem] gap-10">
 				<div className="flex justify-evenly items-start rounded-[5px] flex-wrap relative gap-4 mobile:flex-col tablet:flex-col laptop:flex-row desktop:flex-row bg-ag w-full p-5 mobile:text-[1.5rem] tablet:text-[1.5rem] laptop:text-[1rem] desktop:text-[1rem]">

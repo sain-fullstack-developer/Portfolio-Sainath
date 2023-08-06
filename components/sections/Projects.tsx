@@ -49,7 +49,7 @@ export default function Projects({ projects }: ProjectsProps) {
 							duration: 0.5,
 							delay: 0.4,
 						}}
-						className="h-[2px] mobile:w-[60%] tablet:w-[60%] laptop:w-[80%] desktop:w-[80%] inline-block bg-ab"></motion.div>
+						className="h-[2px] mobile:w-[60%] tablet:w-[60%] laptop:w-[80%] desktop:w-[80%] inline-block bg-white"></motion.div>
 				</div>
 				<div className="flex flex-row justify-center items-center flex-wrap gap-4 mobile:mt-[2rem] tablet:mt-[2rem] laptop:mt-[5rem] desktop:mt-[5rem]">
 					{projects.length > 0 &&

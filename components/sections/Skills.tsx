@@ -49,7 +49,7 @@ export default function Skills({ skills }: SkillsProps) {
 						duration: 0.5,
 						delay: 0.4,
 					}}
-					className="h-[2px] mobile:w-[40%] tablet:w-[80%] laptop:w-[70%] desktop:w-[70%] inline-block bg-ab"></motion.div>
+					className="h-[2px] mobile:w-[40%] tablet:w-[80%] laptop:w-[70%] desktop:w-[70%] inline-block bg-white"></motion.div>
 			</div>
 			<div className="flex mobile:flex-col tablet:flex-col laptop:flex-row desktop:flex-row justify-center items-start mobile:mt-[2rem] tablet:mt-[2rem] laptop:mt-[5rem] desktop:mt-[5rem] gap-6">
 				{skills &&

@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 import styles from "../../index.module.css";
 import { Minus, Link as IconLink, Github, Home } from "lucide-react";
 import Image from "next/image";
+import useAxios from "@/hooks/useAxios";
 import Link from "next/link";
-import useAxios from "../../../../hooks/useAxios";
 
 export default function SlugPage({ params }: { params: { slug: string } }) {
 	const [projectDetails, setProjectDetails] = useState<any>([]);
@@ -14,7 +14,7 @@ export default function SlugPage({ params }: { params: { slug: string } }) {
 
 	const projectData = useAxios({
 		method: "get",
-		url: `/api/getProject?slug=${params.slug}`,
+		url: `https://sainath-portfolio-server.onrender.com/api/projects/${params.slug}`,
 		headers: JSON.stringify({ accept: "*/*" }),
 	});
 
@@ -26,6 +26,8 @@ export default function SlugPage({ params }: { params: { slug: string } }) {
 		}
 	}, [params.slug, projectData]);
 
+	console.log("response", projectDetails);
+
 	return (
 		<>
 			<div className="mt-[60px]">
@@ -34,10 +36,10 @@ export default function SlugPage({ params }: { params: { slug: string } }) {
 						<div className="flex flex-row justify-between items-center w-full">
 							<div className="flex flex-row justify-between items-center gap-5">
 								<div className="text-[3rem] font-semibold">
-									{projectDetails?.title}
+									{projectDetails[0]?.title}
 								</div>
-								{(projectDetails.links?.hosted ?? false) && (
-									<Link target="_blank" href={projectDetails.links.hosted}>
+								{(projectDetails[0]?.links ?? false) && (
+									<Link target="_blank" href={projectDetails[0]?.links}>
 										<IconLink />
 									</Link>
 								)}
@@ -107,7 +109,7 @@ export default function SlugPage({ params }: { params: { slug: string } }) {
 								duration: 0.5,
 								delay: 0.2,
 							}}>
-							{projectDetails?.description}
+							{projectDetails[0]?.description}
 						</motion.div>
 						<motion.div
 							initial={{
@@ -150,7 +152,7 @@ export default function SlugPage({ params }: { params: { slug: string } }) {
 
 								<div className="flex flex-row justify-center items-center gap-2">
 									<Minus />
-									{projectDetails.stack}
+									{projectDetails[0]?.skills}
 								</div>
 							</motion.div>
 							<motion.div
@@ -172,7 +174,7 @@ export default function SlugPage({ params }: { params: { slug: string } }) {
 								}}
 								className="flex flex-col justify-center items-center gap-5 rounded-[5px] border-solid border-[2px] border-ag p-4">
 								<div className="text-[1rem] font-semibold">Type</div>
-								<div>{projectDetails?.type}</div>
+								<div>Type</div>
 							</motion.div>
 							<motion.div
 								initial={{
@@ -196,15 +198,11 @@ export default function SlugPage({ params }: { params: { slug: string } }) {
 								<div>
 									<div className="flex flex-row justify-evenly items-center gap-1">
 										<div>Start date: </div>
-										<div>{projectDetails.timeline?.startDate}</div>
+										<div>startDate</div>
 									</div>
 									<div className="flex flex-row justify-evenly items-center gap-1">
 										<div>End date: </div>
-										<div>
-											{projectDetails.timeline?.endDate
-												? projectDetails.timeline.endDate
-												: "Present"}
-										</div>
+										<div>endDate</div>
 									</div>
 								</div>
 							</motion.div>
@@ -227,9 +225,7 @@ export default function SlugPage({ params }: { params: { slug: string } }) {
 								}}
 								className="flex flex-col justify-center items-center gap-5 rounded-[5px] border-solid border-[2px] border-ag p-4">
 								<div className="text-[1rem] font-semibold">Associated</div>
-								<div className="flex flex-row justify-evenly items-center">
-									{projectDetails.associated?.name}
-								</div>
+								<div className="flex flex-row justify-evenly items-center"></div>
 							</motion.div>
 							<motion.div
 								initial={{
@@ -251,13 +247,13 @@ export default function SlugPage({ params }: { params: { slug: string } }) {
 								className="flex flex-col justify-center items-center gap-5 rounded-[5px] border-solid border-[2px] border-ag p-4">
 								<div className="text-[1rem] font-semibold">Links</div>
 								<div className="flex flex-row justify-evenly items-center flex-wrap gap-2">
-									{projectDetails.links?.github && (
-										<Link target="_blank" href={projectDetails.links.github}>
+									{projectDetails[0]?.links && (
+										<Link target="_blank" href={projectDetails[0]?.links}>
 											<Github />
 										</Link>
 									)}
-									{(projectDetails.links?.hosted ?? false) && (
-										<Link target="_blank" href={projectDetails.links.hosted}>
+									{(projectDetails[0]?.links ?? false) && (
+										<Link target="_blank" href={projectDetails[0]?.links}>
 											<IconLink />
 										</Link>
 									)}
@@ -265,7 +261,7 @@ export default function SlugPage({ params }: { params: { slug: string } }) {
 							</motion.div>
 						</div>
 
-						{projectDetails.images && (
+						{projectDetails && (
 							<>
 								<div className="flex flex-row justify-between items-center mobile:text-[1.5rem] tablet:text-[1.5rem] laptop:text-[2rem] desktop:text-[2rem] font-bold w-[100%]">
 									<motion.div
@@ -307,7 +303,7 @@ export default function SlugPage({ params }: { params: { slug: string } }) {
 										}}
 										className="h-[2px] mobile:w-[70%] tablet:w-[70%] laptop:w-[80%] desktop:w-[80%] inline-block bg-ag"></motion.div>
 								</div>
-								<div className="flex flex-row justify-start items-center flex-wrap gap-5">
+								{/* <div className="flex flex-row justify-start items-center flex-wrap gap-5">
 									{projectDetails.images?.map((image: any, i: number) => (
 										<motion.div
 											initial={{
@@ -337,7 +333,7 @@ export default function SlugPage({ params }: { params: { slug: string } }) {
 											/>
 										</motion.div>
 									))}
-								</div>
+								</div> */}
 							</>
 						)}
 					</div>

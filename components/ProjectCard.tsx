@@ -19,9 +19,9 @@ export default function ProjectCard({
 	links,
 }: ProjectCardProps) {
 	return (
-		<div className="flex flex-col justify-between items-stretch rounded-[5px] bg-ag mobile:w-[100%] tablet:w-[20rem] laptop:w-[20rem] desktop:w-[20rem] h-[16rem] p-5 hover:-translate-y-[7px] transition-all ease-cubic-bezier delay-0 opacity duration-400">
+		<div className="flex flex-col justify-between items-stretch rounded-[5px] bg-ag mobile:w-[100%] tablet:w-[20rem] laptop:w-[20rem] desktop:w-[20rem] min-h-[16rem] p-5 hover:-translate-y-[7px] transition-all ease-cubic-bezier delay-0 opacity duration-400">
 			<Link target="_top" href={`/project/${slug}`}>
-				<div className="text-[25px] font-bold">{title}</div>
+				<div className="text-[25px] font-bold break-words">{title}</div>
 				<div className="h-[2px] mobile:w-[60%] tablet:w-[80%] laptop:w-[70%] desktop:w-[70%]  inline-block bg-ab"></div>
 				<div className="py-5 h-fit font-semibold text-aw">
 					{overview.length > 110
