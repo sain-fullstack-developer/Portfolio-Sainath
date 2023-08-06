@@ -38,7 +38,7 @@ export default function Home() {
 		if (projectData.response !== null && projectData.response.length > 0)
 			setProjects(projectData?.response);
 		if (projectData.error) console.log(projectData.error);
-	}, [skillData]);
+	}, [skillData, projectData]);
 
 	console.log("plain-skills", skills.length);
 

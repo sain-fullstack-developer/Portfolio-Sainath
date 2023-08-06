@@ -7,7 +7,7 @@ declare global {
 	}
 	interface SkillSet {
 		title: string;
-		skills: Array<SkillDetails>;
+		skills: string;
 	}
 	interface CachedData<T> {
 		key: string;

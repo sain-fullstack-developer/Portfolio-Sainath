@@ -33,13 +33,21 @@ export default function ProjectCard({
 				<div className="text-[12px] text-[#a4a4a4]">#{stack}</div>
 
 				<div className="flex flex-row justify-center items-center gap-3">
-					<a target="_blank" href={links.github} rel="noopener noreferrer">
+					<a
+						title="github"
+						target="_blank"
+						href={links.github}
+						rel="noopener noreferrer">
 						<Github />
 					</a>
 					{!links.hosted ? (
 						""
 					) : (
-						<a target="_blank" href={links.hosted} rel="noopener noreferrer">
+						<a
+							title="project-link"
+							target="_blank"
+							href={links.hosted}
+							rel="noopener noreferrer">
 							<Linkedin />
 						</a>
 					)}

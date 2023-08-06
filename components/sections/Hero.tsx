@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Linkedin, Github, ChevronsDown, Hand } from "lucide-react";
+import { Linkedin, Github, ChevronsDown } from "lucide-react";
 import Image from "next/image";
 
 export default function Hero() {
@@ -166,7 +166,7 @@ export default function Hero() {
 						type: "spring",
 					}}
 					className="w-[100%] flex-row justify-center items-end mt-[3rem] mobile:hidden tablet:hidden laptop:flex desktop:flex">
-					<a href="#about-me">
+					<a title="about" href="#about-me">
 						<ChevronsDown className="scale-[180%] duration-500 hover:scale-[150%]" />
 					</a>
 				</motion.div>
